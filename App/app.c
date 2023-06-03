@@ -4,16 +4,20 @@
 bool app_init(void) {
   bool rtn = true;
 
-  rtn &= bsp_led_init();
+  rtn &= bsp_led_dimm_init();
 
   return rtn;
 }
 
 void app_main(void) {
   for (;;) {
-    bsp_led_on();
-    bsp_delay(1000);
-    bsp_led_off();
-    bsp_delay(1000);
+    for (int i = 0; i < 100; i++) {
+      bsp_led_dimm_set(i);
+      bsp_delay(10);
+    }
+    for (int i = 100; i > 0; i--) {
+      bsp_led_dimm_set(i);
+      bsp_delay(10);
+    }
   }
 }
