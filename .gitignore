@@ -75,3 +75,5 @@ ctrlp.root
 CMakePresets.json
 STM32F103RBTX_FLASH.ld
 vcpkg-configuration.json
+
+cmake/st-project.cmake
